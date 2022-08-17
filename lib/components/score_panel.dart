@@ -7,7 +7,7 @@ class ScorePanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      width: double.infinity,
+      width: 1150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,

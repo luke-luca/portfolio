@@ -7,7 +7,7 @@ class FooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 300,
       width: 1150,
       padding: const EdgeInsets.symmetric(horizontal: 48.0),
       child: Column(

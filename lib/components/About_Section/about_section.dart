@@ -14,7 +14,7 @@ class AboutSection extends StatelessWidget {
         color: Colors.white,
       ),
       child: ConstrainedBox(
-        constraints: BoxConstraints(
+        constraints: const BoxConstraints(
           maxWidth: 1150,
         ),
         child: Row(
@@ -51,13 +51,13 @@ class AboutSection extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsets.only(top: 5.0),
-                    child: Text(
+                    child: const Text(
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare magna dolor, cursus facilisis sapien pulvinar ac. Curabitur hendrerit aliquam dui sed finibus. Vivamus vestibulum tincidunt sem a vestibulum. Morbi euismod mauris at dolor commodo, vitae elementum metus sodales. Fusce nulla magna, faucibus ac convallis nec, fermentum quis nunc. Maecenas iaculis enim vel mi vulputate porttitor. .',
                         textAlign: TextAlign.justify),
                   ),
                   Container(
                     margin: const EdgeInsets.only(top: 5.0),
-                    child: Text(
+                    child: const Text(
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare magna dolor, cursus facilisis sapien pulvinar ac. Curabitur hendrerit aliquam dui sed finibus. Vivamus vestibulum tincidunt sem a vestibulum. Morbi euismod mauris at dolor commodo, vitae elementum metus sodales. Fusce nulla magna, faucibus ac convallis nec, fermentum quis nunc. Maecenas iaculis enim vel mi vulputate porttitor. .',
                       textAlign: TextAlign.justify,
                     ),
@@ -98,9 +98,9 @@ Widget counterTile(String title, String subtitle, IconData icon, Color color) {
       color: Colors.white,
       boxShadow: [
         BoxShadow(
-          color: Colors.black.withOpacity(0.1),
-          blurRadius: 2,
-          spreadRadius: 4,
+          color: Color.fromARGB(255, 105, 105, 105).withOpacity(0.1),
+          blurRadius: 1,
+          spreadRadius: 3,
           offset: Offset.fromDirection(1),
         ),
       ],

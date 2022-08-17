@@ -82,7 +82,7 @@ class HeroRight extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("/images/background_photo.png"),
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.contain,
         ),
       ),
       child: Align(

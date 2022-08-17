@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/components/About_Section/about_section.dart';
 import 'package:portfolio/components/Footer_Section/footer_section.dart';
 import 'package:portfolio/components/Nav_Section/nav_bar.dart';
+import 'package:portfolio/components/Projects_Section/projects_section.dart';
+import 'package:portfolio/components/Skills_Section/skills_section.dart';
 import 'package:portfolio/components/score_panel.dart';
 import 'package:portfolio/consts.dart';
 
@@ -36,7 +38,13 @@ class _MyAppState extends State<MyApp> {
             children: [
               NavBar(),
               HeroSection(),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: ScorePanel(),
+              ),
               AboutSection(),
+              SkillsSection(),
+              ProjectsSection(),
               FooterSection(),
             ],
           ),
