@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
 
 class FooterSection extends StatelessWidget {
-  const FooterSection({Key? key}) : super(key: key);
+  const FooterSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 500,
       width: 1150,
-      padding: const EdgeInsets.symmetric(horizontal: 48.0),
+      padding: const EdgeInsets.symmetric(horizontal: 48),
       child: Column(
         children: [
           Row(
@@ -22,13 +22,13 @@ class FooterSection extends StatelessWidget {
                 children: [
                   Text(
                     'Let’s talk toghtether',
-                    style: h2,
+                    style: AppColors.h2,
                   ),
                   Text(
                     'Start by saying hi!',
-                    style: h2,
+                    style: AppColors.h2,
                   ),
-                  Text('Check my CV', style: h2),
+                  Text('Check my CV', style: AppColors.h2),
                   IconButton(
                     onPressed: () {},
                     hoverColor: Colors.transparent,
@@ -38,21 +38,20 @@ class FooterSection extends StatelessWidget {
                 ],
               ),
               Column(
-                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Menu', style: h2),
+                  Text('Menu', style: AppColors.h2),
                   const Divider(
-                    color: orangeColor,
+                    color: AppColors.orangeColor,
                     thickness: 10,
                     indent: 20,
                     endIndent: 20,
                     height: 20,
                   ),
-                  Text('About', style: pLight),
-                  Text('Skills', style: pLight),
-                  Text('Projects', style: pLight),
-                  Text('Contact', style: pLight),
+                  Text('About', style: AppColors.pLight),
+                  Text('Skills', style: AppColors.pLight),
+                  Text('Projects', style: AppColors.pLight),
+                  Text('Contact', style: AppColors.pLight),
                 ],
               ),
             ],
@@ -61,7 +60,7 @@ class FooterSection extends StatelessWidget {
             color: Colors.black.withOpacity(0.1),
             thickness: 1,
           ),
-          Text('© 2020', style: pLight),
+          Text('© 2020', style: AppColors.pLight),
         ],
       ),
     );

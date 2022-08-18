@@ -1,0 +1,7 @@
+{
+    "@@locale": "en",
+    "loremLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare magna dolor, cursus facilisis sapien pulvinar ac. Curabitur hendrerit aliquam dui sed finibus. Vivamus vestibulum tincidunt sem a vestibulum. Morbi euismod mauris at dolor commodo, vitae elementum metus sodales. Fusce nulla magna, faucibus ac convallis nec, fermentum quis nunc. Maecenas iaculis enim vel mi vulputate porttitor. .",
+    "@loremLong": {
+        "description": "Long Lorem Ipsum"
+    }
+}

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
 
 class HeroSection extends StatefulWidget {
-  const HeroSection({Key? key}) : super(key: key);
+  const HeroSection({super.key});
 
   @override
   State<HeroSection> createState() => _HeroSectionState();
@@ -12,11 +12,11 @@ class _HeroSectionState extends State<HeroSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 64.0, horizontal: 48.0),
+      padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 48),
       width: 1150,
       child: Row(
         children: const [
-          Expanded(flex: 1, child: HeroLeft()),
+          Expanded(child: HeroLeft()),
           Expanded(flex: 2, child: HeroRight())
         ],
       ),
@@ -26,8 +26,8 @@ class _HeroSectionState extends State<HeroSection> {
 
 class HeroLeft extends StatelessWidget {
   const HeroLeft({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,22 +37,22 @@ class HeroLeft extends StatelessWidget {
       children: [
         Text(
           "Hi, There!\nI'm Lukas",
-          style: h1,
+          style: AppColors.h1,
         ),
         Text(
-          "aspiring web and mobile\ndeveloper",
-          style: h2,
+          'aspiring web and mobile\ndeveloper',
+          style: AppColors.h2,
         ),
-        const SizedBox(height: 20.0),
+        const SizedBox(height: 20),
         Text(
-          "kontakt@lukaszmazurkiewicz.pl",
-          style: pAccent,
+          'kontakt@lukaszmazurkiewicz.pl',
+          style: AppColors.pAccent,
         ),
-        const SizedBox(height: 20.0),
+        const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            primary: yellowColor,
+            primary: AppColors.yellowColor,
             elevation: 0,
             padding: const EdgeInsets.only(
               top: 18,
@@ -64,7 +64,7 @@ class HeroLeft extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
             ),
           ),
-          child: Text("Contact me", style: buttonText),
+          child: Text('Contact me', style: AppColors.buttonText),
         )
       ],
     );
@@ -73,24 +73,24 @@ class HeroLeft extends StatelessWidget {
 
 class HeroRight extends StatelessWidget {
   const HeroRight({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("/images/background_photo.png"),
-          fit: BoxFit.contain,
+          image: AssetImage('/images/background_photo.png'),
+          fit: BoxFit.fitHeight,
         ),
       ),
       child: Align(
         alignment: Alignment.bottomRight,
-        child: (Image.asset(
+        child: Image.asset(
           'images/me.png',
           height: 450,
-        )),
+        ),
       ),
     );
   }

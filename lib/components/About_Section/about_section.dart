@@ -1,40 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
+import 'package:portfolio/l10n/l10n.dart';
 
 class AboutSection extends StatelessWidget {
-  const AboutSection({Key? key}) : super(key: key);
+  const AboutSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 450,
-      padding: const EdgeInsets.symmetric(horizontal: 48.0),
-      width: 1150,
       decoration: const BoxDecoration(
         color: Colors.white,
       ),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth: 1150,
-        ),
+      child: SizedBox(
+        width: 1150,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  counterTile('Lorem', 'LoremIpsum Latatata', Icons.abc,
-                      darkGreenColor),
-                  counterTile(
-                      'Lorem', 'LoremIpsum Latatata', Icons.abc, yellowColor),
-                  counterTile(
-                      'Lorem', 'LoremIpsum Latatata', Icons.abc, orangeColor),
+                children: const [
+                  CounterTile(
+                    title: 'Lorem',
+                    subtitle: 'LoremIpsum Latatata',
+                    icon: Icons.abc,
+                    color: AppColors.darkGreenColor,
+                  ),
+                  CounterTile(
+                    title: 'Lorem',
+                    subtitle: 'LoremIpsum Latatata',
+                    icon: Icons.abc,
+                    color: AppColors.yellowColor,
+                  ),
+                  CounterTile(
+                    title: 'Lorem',
+                    subtitle: 'LoremIpsum Latatata',
+                    icon: Icons.abc,
+                    color: AppColors.orangeColor,
+                  ),
                 ],
               ),
             ),
             const VerticalDivider(
-              color: orangeColor,
+              color: AppColors.orangeColor,
               thickness: 3,
               indent: 20,
               endIndent: 20,
@@ -42,42 +51,36 @@ class AboutSection extends StatelessWidget {
             ),
             Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'What do I do?',
-                    style: h2,
+                    style: AppColors.h2,
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 5.0),
-                    child: const Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare magna dolor, cursus facilisis sapien pulvinar ac. Curabitur hendrerit aliquam dui sed finibus. Vivamus vestibulum tincidunt sem a vestibulum. Morbi euismod mauris at dolor commodo, vitae elementum metus sodales. Fusce nulla magna, faucibus ac convallis nec, fermentum quis nunc. Maecenas iaculis enim vel mi vulputate porttitor. .',
-                        textAlign: TextAlign.justify),
+                  Text(
+                    context.l10n.loremLong,
+                    textAlign: TextAlign.justify,
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 5.0),
-                    child: const Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare magna dolor, cursus facilisis sapien pulvinar ac. Curabitur hendrerit aliquam dui sed finibus. Vivamus vestibulum tincidunt sem a vestibulum. Morbi euismod mauris at dolor commodo, vitae elementum metus sodales. Fusce nulla magna, faucibus ac convallis nec, fermentum quis nunc. Maecenas iaculis enim vel mi vulputate porttitor. .',
-                      textAlign: TextAlign.justify,
-                    ),
+                  Text(
+                    context.l10n.loremLong,
+                    textAlign: TextAlign.justify,
                   ),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      primary: yellowColor,
+                      primary: AppColors.yellowColor,
                       elevation: 0,
-                      padding: const EdgeInsets.only(
-                        top: 18,
-                        bottom: 18,
-                        left: 24,
-                        right: 24,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 18,
+                        horizontal: 24,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
                     ),
-                    child: Text("Contact me", style: buttonText),
+                    child: Text(
+                      'Contact me',
+                      style: AppColors.buttonText,
+                    ),
                   )
                 ],
               ),
@@ -89,48 +92,64 @@ class AboutSection extends StatelessWidget {
   }
 }
 
-Widget counterTile(String title, String subtitle, IconData icon, Color color) {
-  return Container(
-    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-    width: 300,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(12),
-      color: Colors.white,
-      boxShadow: [
-        BoxShadow(
-          color: Color.fromARGB(255, 105, 105, 105).withOpacity(0.1),
-          blurRadius: 1,
-          spreadRadius: 3,
-          offset: Offset.fromDirection(1),
-        ),
-      ],
-    ),
-    child: Row(
-      children: [
-        Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: color,
+class CounterTile extends StatelessWidget {
+  const CounterTile({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.color,
+  });
+
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+      width: 300,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 2,
+            spreadRadius: 4,
+            offset: Offset.fromDirection(1),
           ),
-          child: const Icon(
-            Icons.favorite,
-            color: Colors.white,
-            size: 30,
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: color,
+            ),
+            child: const Icon(
+              Icons.favorite,
+              color: Colors.white,
+              size: 30,
+            ),
           ),
-        ),
-        const SizedBox(
-          width: 20,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title, style: pDark),
-            Text(subtitle, style: pLight),
-          ],
-        ),
-      ],
-    ),
-  );
+          const SizedBox(
+            width: 20,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: AppColors.pDark),
+              Text(subtitle, style: AppColors.pLight),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }

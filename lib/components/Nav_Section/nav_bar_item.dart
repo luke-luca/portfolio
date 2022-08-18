@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
 
 class NavBarItem extends StatefulWidget {
+  const NavBarItem({
+    super.key,
+    required this.text,
+  });
+
   final String text;
 
-  const NavBarItem({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
-
   @override
-  _NavBarItemState createState() => _NavBarItemState();
+  NavBarItemState createState() => NavBarItemState();
 }
 
-class _NavBarItemState extends State<NavBarItem> {
-  Color selected = greenColor;
-  Color notSelected = darkGreenColor;
-  Color color = darkGreenColor;
+class NavBarItemState extends State<NavBarItem> {
+  Color selected = AppColors.greenColor;
+  Color notSelected = AppColors.darkGreenColor;
+  Color color = AppColors.darkGreenColor;
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
@@ -37,11 +37,13 @@ class _NavBarItemState extends State<NavBarItem> {
           onTap: () {},
           child: Container(
             alignment: Alignment.centerLeft,
-            padding:
-                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(
+              vertical: 16,
+              horizontal: 24,
+            ),
             child: Text(
               widget.text,
-              style: menuItem,
+              style: AppColors.menuItem,
             ),
           ),
         ),
