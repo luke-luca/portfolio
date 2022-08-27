@@ -12,72 +12,83 @@ class _SkillsSectionState extends State<SkillsSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 550,
-      padding: const EdgeInsets.symmetric(horizontal: 48),
-      width: 1150,
-      child: Row(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 50),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Skills',
-                  style: AppColors.h2,
-                ),
-                Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare magna dolor, cursus facilisis sapien',
-                  style: AppColors.pLight,
-                ),
-              ],
-            ),
+          Text(
+            'Skills',
+            style: AppColors.h2,
           ),
-          const VerticalDivider(
-            color: AppColors.orangeColor,
-            thickness: 3,
-            indent: 20,
-            endIndent: 20,
-            width: 50,
+          const SizedBox(height: 20),
+          Text(
+            'I have experience with the following programming languages:',
+            textAlign: TextAlign.justify,
+            style: AppColors.pLight,
           ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Programming Languages',
-                  style: AppColors.h2,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      'Data Structures',
-                      style: AppColors.h3,
-                    ),
-                    const Icon(
-                      Icons.code,
-                      color: Colors.blue,
-                      size: 40,
-                    ),
-                    const Icon(
-                      Icons.code,
-                      color: Colors.blue,
-                      size: 40,
-                    ),
-                    const Icon(
-                      Icons.code,
-                      color: Colors.blue,
-                      size: 40,
-                    ),
-                    const Icon(
-                      Icons.code,
-                      color: Colors.blue,
-                      size: 40,
-                    ),
-                  ],
-                ),
-              ],
-            ),
+          GridView.count(
+            crossAxisCount: 3,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            children: skillsItems,
+          ),
+          Text(
+            'And I am also familiar with the following apps:',
+            textAlign: TextAlign.justify,
+            style: AppColors.pLight,
+          ),
+          GridView.count(
+            crossAxisCount: 3,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            children: techItems,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+List<Widget> skillsItems = const [
+  SkillTile(image: 'dart', text: 'Dart'),
+  SkillTile(image: 'flutter', text: 'Flutter'),
+  SkillTile(image: 'wordpress', text: 'Wordpress'),
+  SkillTile(image: 'html', text: 'HTML'),
+  SkillTile(image: 'css', text: 'CSS'),
+  SkillTile(image: 'postgres', text: 'Postgres'),
+];
+
+List<Widget> techItems = const [
+  SkillTile(image: 'dart', text: 'Dart'),
+  SkillTile(image: 'flutter', text: 'Flutter'),
+  SkillTile(image: 'wordpress', text: 'Wordpress'),
+  SkillTile(image: 'html', text: 'HTML'),
+];
+
+class SkillTile extends StatelessWidget {
+  const SkillTile({
+    super.key,
+    required this.image,
+    required this.text,
+  });
+  final String image;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            '/images/skills_icons/$image.png',
+            width: 64,
+            height: 62,
+          ),
+          const SizedBox(height: 10),
+          Text(
+            text,
+            style: AppColors.pLight,
           ),
         ],
       ),

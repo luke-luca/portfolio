@@ -19,14 +19,14 @@ class CounterTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-      width: 310,
+      width: double.infinity,
       height: 92,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Color.fromARGB(255, 209, 209, 209).withOpacity(0.1),
             blurRadius: 2,
             spreadRadius: 4,
             offset: Offset.fromDirection(1),

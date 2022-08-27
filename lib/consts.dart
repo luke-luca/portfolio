@@ -7,13 +7,13 @@ class AppColors {
   static const Color greenColor = Color(0xFF286F6C);
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color shadedColor = Color(0xFFF8F7F1);
-  static const Color lightGrayColor = Color(0xFF96A0A3);
+  static const Color lightGrayColor = Color.fromARGB(255, 80, 85, 87);
   static const Color yellowColor = Color(0xFFF1C249);
   static const Color orangeColor = Color(0xFFF26440);
 
   /// Fonts
   static TextStyle nunitoFont = GoogleFonts.nunito();
-  static TextStyle robotoSlabFont = GoogleFonts.robotoSlab();
+  static TextStyle robotoSlabFont = GoogleFonts.openSans();
 
   /// Headings
   static TextStyle h1 = nunitoFont.copyWith(

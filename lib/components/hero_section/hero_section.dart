@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/components/Hero_Section/score_panel.dart';
+import 'package:portfolio/components/elements/main_button.dart';
 import 'package:portfolio/consts.dart';
 
 class HeroSection extends StatefulWidget {
@@ -10,36 +10,26 @@ class HeroSection extends StatefulWidget {
 }
 
 class _HeroSectionState extends State<HeroSection> {
-  late ScrollController _controller;
-  double pixels = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = ScrollController();
-    _controller.addListener(() {
-      setState(() {
-        pixels = _controller.position.pixels;
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 64, left: 48, right: 48, bottom: 0),
-      height: MediaQuery.of(context).size.height,
+    final width = MediaQuery.of(context).size.width;
+    return SizedBox(
       width: 1150,
-      child: Column(
-        children: [
-          Row(
-            children: const [
-              Expanded(child: HeroLeft()),
-              Expanded(flex: 2, child: HeroRight())
-            ],
-          ),
-          const ScorePanel(),
-        ],
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          if (width < 800) {
+            return Column(children: const [HeroLeft(), HeroRight()]);
+          } else {
+            return Expanded(
+              child: Row(
+                children: const [
+                  Expanded(flex: 1, child: HeroLeft()),
+                  Expanded(flex: 2, child: HeroRight()),
+                ],
+              ),
+            );
+          }
+        },
       ),
     );
   }
@@ -53,41 +43,55 @@ class HeroLeft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "Hi, There!\nI'm Lukas",
-          style: AppColors.h1,
+          style: AppColors.h1.copyWith(
+            fontSize: 48,
+          ),
         ),
         Text(
-          'aspiring web and mobile\ndeveloper',
-          style: AppColors.h2,
+          'aspiring web and mobile developer',
+          style: AppColors.h2.copyWith(
+            fontSize: 36,
+          ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 10),
         Text(
           'kontakt@lukaszmazurkiewicz.pl',
-          style: AppColors.pAccent,
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            primary: AppColors.yellowColor,
-            elevation: 0,
-            padding: const EdgeInsets.only(
-              top: 18,
-              bottom: 18,
-              left: 24,
-              right: 24,
-            ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
-            ),
+          style: AppColors.pAccent.copyWith(
+            fontSize: 16,
           ),
-          child: Text('Contact me', style: AppColors.buttonText),
-        )
+        ),
+        const SizedBox(height: 30),
       ],
+    );
+  }
+}
+
+class SlideButton extends StatelessWidget {
+  const SlideButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 48,
+      width: 48,
+      child: Material(
+        color: Colors.white,
+        shape: const CircleBorder(),
+        shadowColor: Colors.black.withOpacity(0.5),
+        child: InkWell(
+          splashColor: Colors.white60,
+          hoverColor: Colors.transparent,
+          child: const Icon(
+            Icons.arrow_downward_rounded,
+            size: 36,
+            color: AppColors.darkGreenColor,
+          ),
+        ),
+      ),
     );
   }
 }
@@ -102,15 +106,16 @@ class HeroRight extends StatelessWidget {
     return DecoratedBox(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('/images/background_photo.png'),
-          fit: BoxFit.fitHeight,
-        ),
+            image: AssetImage('/images/background_photo.png'),
+            fit: BoxFit.contain,
+            alignment: Alignment.centerLeft),
       ),
       child: Align(
-        alignment: Alignment.bottomRight,
+        alignment: Alignment.bottomCenter,
         child: Image.asset(
           'images/me.png',
-          height: 450,
+          fit: BoxFit.contain,
+          height: MediaQuery.of(context).size.height * 0.4,
         ),
       ),
     );
