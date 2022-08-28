@@ -7,20 +7,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:portfolio/bootstrap.dart';
-
-import 'package:portfolio/components/About_Section/about_section.dart';
-import 'package:portfolio/components/Footer_Section/footer_section.dart';
-import 'package:portfolio/components/Hero_Section/hero_section.dart';
-import 'package:portfolio/components/Nav_Section/nav_bar.dart';
 import 'package:portfolio/consts.dart';
 
 void main() {
-  bootstrap(
-    () => const MaterialApp(
-      home: MyApp(),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
+  bootstrap(() => const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -39,12 +29,7 @@ class MyAppState extends State<MyApp> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              NavBar(),
-              HeroSection(),
-              AboutSection(),
-              FooterSection(),
-            ],
+            children: const [Text('Hi')],
           ),
         ),
       ),

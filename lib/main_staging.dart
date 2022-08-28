@@ -6,21 +6,17 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:portfolio/bootstrap.dart';
-
-import 'package:portfolio/components/About_Section/about_section.dart';
-import 'package:portfolio/components/Footer_Section/footer_section.dart';
-import 'package:portfolio/components/Hero_Section/hero_section.dart';
-import 'package:portfolio/components/Nav_Section/nav_bar.dart';
-import 'package:portfolio/consts.dart';
+import 'package:portfolio/l10n/l10n.dart';
+import 'package:portfolio/sections/main_page.dart';
 
 void main() {
-  bootstrap(
-    () => const MaterialApp(
-      home: MyApp(),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  bootstrap(() => const MyApp());
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatefulWidget {
@@ -33,21 +29,14 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.shadedColor,
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              NavBar(),
-              HeroSection(),
-              AboutSection(),
-              FooterSection(),
-            ],
-          ),
-        ),
-      ),
+    return const MaterialApp(
+      home: MainPage(),
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

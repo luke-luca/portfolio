@@ -7,12 +7,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:portfolio/bootstrap.dart';
-import 'package:portfolio/components/main_page.dart';
 import 'package:portfolio/l10n/l10n.dart';
+import 'package:portfolio/sections/main_page.dart';
 
 void main() {
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   bootstrap(() => const MyApp());
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatefulWidget {
