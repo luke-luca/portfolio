@@ -36,7 +36,7 @@ class _SkillsSectionState extends State<SkillsSection> {
               ListView.builder(
                 itemCount: 1,
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return SkillTile(
                     title: 'Dart',
