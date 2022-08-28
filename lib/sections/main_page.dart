@@ -35,24 +35,9 @@ class _MainPageState extends State<MainPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const NavBar(),
-                const HeroSection(),
-                //check if desktop
-                Container(
-                  width: double.infinity,
-                  color: Colors.white,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      SkillsSection(),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            const NavBar(),
+            const HeroSection(),
+            const  SkillsSection(),
           ],
         ),
       ),
