@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
+import 'package:portfolio/sections/about_section/about_section.dart';
 import 'package:portfolio/sections/hero_section/hero_section.dart';
 import 'package:portfolio/sections/nav_section/nav_bar.dart';
 import 'package:portfolio/sections/skills_section/skills_section.dart';
+import 'package:portfolio/sections/widgets/score_panel.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -28,16 +30,45 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    return CustomScaffoldWithNavBar(
+      body: Column(
+        children: const [
+          HeroSection(),
+          SkillsSection(),
+          AboutSection(),
+        ],
+      ),
+    );
+  }
+}
+
+class CustomScaffoldWithNavBar extends StatelessWidget {
+  const CustomScaffoldWithNavBar({
+    super.key,
+    required this.body,
+  });
+
+  final Widget body;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.shadedColor,
       body: SingleChildScrollView(
-        controller: _controller,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const NavBar(),
-            const HeroSection(),
-            const  SkillsSection(),
+            Stack(
+              children: [
+                Column(
+                  children: [
+                    const SizedBox(height: 90),
+                    body,
+                  ],
+                ),
+                const NavBar(),
+              ],
+            ),
           ],
         ),
       ),

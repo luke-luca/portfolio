@@ -23,8 +23,10 @@ class _NavBarState extends State<NavBar> {
               ? AppConstsTablet.defaultPaddingNavBar
               : AppConstsDesktop.defaultPaddingNavBar,
       child: Stack(
+        fit: StackFit.passthrough,
         children: [
           AnimatedContainer(
+            color: AppColors.shadedColor,
             margin: const EdgeInsets.only(top: 80),
             duration: const Duration(milliseconds: 375),
             curve: Curves.ease,
