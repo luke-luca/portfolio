@@ -8,6 +8,7 @@ class HeroDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           "Hi, There!\nI'm Lukas",
@@ -19,7 +20,6 @@ class HeroDescription extends StatelessWidget {
           'kontakt@lukaszmazurkiewicz.pl',
           style: AppTextStyles.pAccent,
         ),
-        const SizedBox(height: 30),
       ],
     );
   }

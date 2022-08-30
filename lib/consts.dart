@@ -27,21 +27,21 @@ class AppTextStyles {
     color: AppColors.darkGreenColor,
   );
 
-  static TextStyle h2 = AppFonts.robotoSlabFont.copyWith(
+  static TextStyle h2 = AppFonts.nunitoFont.copyWith(
     fontSize: 36,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.bold,
     color: AppColors.darkGreenColor,
   );
 
-  static TextStyle h3 = AppFonts.robotoSlabFont.copyWith(
-    fontSize: 22,
-    fontWeight: FontWeight.w400,
+  static TextStyle h3 = AppFonts.nunitoFont.copyWith(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
     color: AppColors.darkGreenColor,
   );
   //Paragraphs
   static TextStyle pDark = AppFonts.robotoSlabFont.copyWith(
     fontSize: 16,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.normal,
     color: AppColors.darkGreenColor,
   );
 

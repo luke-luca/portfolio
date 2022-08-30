@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
 import 'package:portfolio/sections/about_section/about_section.dart';
+import 'package:portfolio/sections/footer_section/footer_section.dart';
 import 'package:portfolio/sections/hero_section/hero_section.dart';
 import 'package:portfolio/sections/nav_section/nav_bar.dart';
+import 'package:portfolio/sections/projects_section/projects_section.dart';
 import 'package:portfolio/sections/skills_section/skills_section.dart';
 import 'package:portfolio/sections/widgets/score_panel.dart';
 
@@ -31,12 +33,16 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffoldWithNavBar(
-      body: Column(
-        children: const [
-          HeroSection(),
-          SkillsSection(),
-          AboutSection(),
-        ],
+      body: Center(
+        child: Column(
+          children: const [
+            HeroSection(),
+            AboutSection(),
+            SkillsSection(),
+            ProjectsSection(),
+            FooterSection(),
+          ],
+        ),
       ),
     );
   }

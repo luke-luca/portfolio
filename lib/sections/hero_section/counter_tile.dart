@@ -19,7 +19,7 @@ class CounterTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-      width: double.infinity,
+      width: 300,
       height: 92,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
@@ -55,7 +55,7 @@ class CounterTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: AppTextStyles.pDark),
+              Text(title, style: AppTextStyles.h3),
               Text(subtitle, style: AppTextStyles.pLight),
             ],
           ),
