@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/consts.dart';
 import 'package:portfolio/responsive.dart';
 
@@ -9,12 +10,14 @@ class ProjectTile extends StatelessWidget {
     required this.image,
     required this.description,
     required this.backgroundColor,
+    // required this.techList,
   });
 
   final String title;
   final String image;
   final String description;
   final Color backgroundColor;
+  // final List<String> techList;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,32 +41,13 @@ class ProjectTile extends StatelessWidget {
       child: Stack(
         children: [
           Padding(
-            padding:
-                const EdgeInsets.only(top: 20, left: 20, right: 40, bottom: 10),
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: Transform(
-                transform: Matrix4.rotationZ(-0.2),
-                child: Positioned(
-                  right: -20,
-                  bottom: -20,
-                  child: Image.asset(
-                    '/projects_photos/$image.png',
-                    fit: BoxFit.contain,
-                    height: MediaQuery.of(context).size.height * 0.2,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: AppTextStyles.h2.copyWith(
+                  style: AppTextStyles.h3.copyWith(
                     color: Colors.white,
                   ),
                 ),
@@ -73,6 +57,24 @@ class ProjectTile extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                // ListView.builder(
+                //   itemCount: techList.length,
+                //   shrinkWrap: true,
+                //   itemBuilder: (context, index) {
+                //     return ListTile(
+                //       title: Text(
+                //         techList[index],
+                //         style: AppTextStyles.h3,
+                //       ),
+                //       leading: SvgPicture.asset(
+                //         '/skills_icons/${techList[index]}-plain.svg',
+                //         width: 16,
+                //         height: 16,
+                //         color: AppColors.darkGreenColor,
+                //       ),
+                //     );
+                //   },
+                // ),
               ],
             ),
           ),

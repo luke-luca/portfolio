@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/consts.dart';
 
 class Responsive extends StatelessWidget {
   const Responsive({
@@ -25,7 +24,6 @@ class Responsive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     return SizedBox(
       width: 1150,
       child: LayoutBuilder(

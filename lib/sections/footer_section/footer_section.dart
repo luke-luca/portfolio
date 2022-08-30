@@ -1,7 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
 import 'package:portfolio/responsive.dart';
 import 'package:portfolio/sections/widgets/custom_divider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FooterSection extends StatelessWidget {
   const FooterSection({super.key});
@@ -26,12 +28,12 @@ class FooterSection extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const FooterInfo(),
+                children: const [
+                  FooterInfo(),
                   DecotarionFooter(),
                 ],
               ),
-              CustomDivider(),
+              const CustomDivider(),
               const CopyRights(),
             ],
           ),
@@ -41,12 +43,12 @@ class FooterSection extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const FooterInfo(),
+                children: const [
+                  FooterInfo(),
                   DecotarionFooter(),
                 ],
               ),
-              CustomDivider(),
+              const CustomDivider(),
               const CopyRights(),
             ],
           ),
@@ -58,83 +60,84 @@ class FooterSection extends StatelessWidget {
 
 class FooterInfo extends StatelessWidget {
   const FooterInfo({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Let’s talk and work together!',
-          style: AppTextStyles.h2,
-        ),
-        const SizedBox(height: 10),
-        Text(
-          'Interested?',
-          style: AppTextStyles.h2,
-        ),
-        const SizedBox(height: 10),
-        RichText(
-          text: TextSpan(
-            text: 'Checkout my ',
-            style: AppTextStyles.h3,
-            children: [
-              TextSpan(
-                text: 'resume',
-                style: AppTextStyles.h3.copyWith(
-                  color: AppColors.orangeColor,
-                  decoration: TextDecoration.underline,
-                ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Let’s talk and work together!',
+              style: AppTextStyles.h2,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'Interested?',
+              style: AppTextStyles.h2,
+            ),
+            const SizedBox(height: 10),
+            RichText(
+              text: TextSpan(
+                text: 'Checkout my ',
+                style: AppTextStyles.h3,
+                children: [
+                  TextSpan(
+                    text: 'resume',
+                    style: AppTextStyles.h3.copyWith(
+                      color: AppColors.orangeColor,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-        RichText(
-          text: TextSpan(
-            text: 'E-mail me at ',
-            style: AppTextStyles.h3,
-            children: [
-              TextSpan(
-                text: 'kontakt@lukaszmazurkiewicz.pl',
-                style: AppTextStyles.h3.copyWith(
-                  color: AppColors.orangeColor,
-                  decoration: TextDecoration.underline,
-                ),
+            ),
+            RichText(
+              text: TextSpan(
+                text: 'E-mail me at ',
+                style: AppTextStyles.h3,
+                children: [
+                  TextSpan(
+                    text: 'kontakt@lukaszmazurkiewicz.pl',
+                    style: AppTextStyles.h3.copyWith(
+                      color: AppColors.orangeColor,
+                      decoration: TextDecoration.underline,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        final emailLaunchUri = Uri(
+                          scheme: 'mailto',
+                          path: 'smith@example.com',
+                        );
+                        launchUrl(emailLaunchUri);
+                      },
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-        Text(
-          'or',
-          style: AppTextStyles.h3,
-        ),
-        RichText(
-          text: TextSpan(
-            text: 'Write to me on ',
-            style: AppTextStyles.h3,
-            children: [
-              TextSpan(
-                text: 'linkedin',
-                style: AppTextStyles.h3.copyWith(
-                  color: AppColors.orangeColor,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
         Row(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                final _url = Uri.parse(AppConsts.appAuthorGithub);
+                launchUrl(_url);
+              },
               hoverColor: Colors.transparent,
               icon: Image.asset('icons/github_icon.png'),
               iconSize: 36,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                final _url = Uri.parse(AppConsts.appAuthorLinkedIn);
+                launchUrl(_url);
+              },
               hoverColor: Colors.transparent,
               icon: Image.asset('icons/linkedin_icon.png'),
               iconSize: 36,
@@ -152,8 +155,12 @@ class DecotarionFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 400,
+      width: (!Responsive.isDesktop(context))
+          ? MediaQuery.of(context).size.width * 0.2
+          : 300,
+      height: (!Responsive.isDesktop(context))
+          ? MediaQuery.of(context).size.height * 0.2
+          : 300,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage('/images/background_photo-footer.png'),
@@ -175,7 +182,7 @@ class CopyRights extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '©2022 lukaszmazurkiewicz.pl',
+            '©2022 lukaszmazurkiewicz.pl All Rights Reserved',
             style: AppTextStyles.pLight,
             textAlign: TextAlign.center,
           ),

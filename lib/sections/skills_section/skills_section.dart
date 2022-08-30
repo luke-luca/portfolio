@@ -3,6 +3,7 @@ import 'package:portfolio/consts.dart';
 import 'package:portfolio/responsive.dart';
 import 'package:portfolio/sections/skills_section/models/skill_model.dart';
 import 'package:portfolio/sections/skills_section/widgets/skills_tile.dart';
+import 'package:portfolio/sections/skills_section/widgets/skills_tile_decoration.dart';
 
 class SkillsSection extends StatefulWidget {
   const SkillsSection({super.key});
@@ -22,43 +23,43 @@ class _SkillsSectionState extends State<SkillsSection> {
       skill: 'Dart',
     ),
     Skill(
-      icon: 'html',
+      icon: 'html5',
       skill: 'HTML5',
     ),
     Skill(
-      icon: 'css',
+      icon: 'css3',
       skill: 'CSS',
     ),
     Skill(
-      icon: 'flutter',
+      icon: 'csharp',
       skill: 'C#',
     ),
   ];
   final List<Skill> softwareList = const [
     Skill(
-      icon: 'flutter',
+      icon: 'figma',
       skill: 'Figma',
     ),
     Skill(
-      icon: 'dart',
+      icon: 'xd',
       skill: 'Adobe XD',
     ),
     Skill(
-      icon: 'html',
+      icon: 'photoshop',
       skill: 'Adobe Photoshop',
     ),
     Skill(
-      icon: 'css',
+      icon: 'unity',
       skill: 'Unity',
     ),
   ];
   final List<Skill> languagesList = const [
     Skill(
-      icon: 'flutter',
+      icon: 'language',
       skill: 'Polish (native)',
     ),
     Skill(
-      icon: 'dart',
+      icon: 'language',
       skill: 'English',
     ),
   ];
@@ -78,37 +79,65 @@ class _SkillsSectionState extends State<SkillsSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Tech Stack',
+              'Technology Stack',
               style: AppTextStyles.h2,
             ),
             const SizedBox(height: 10),
             Text(
-              'Hihihihihi',
+              'Daily usage, languages and technologies in my daily life.',
               textAlign: TextAlign.justify,
               style: AppTextStyles.pDark,
             ),
             const SizedBox(height: 30),
             GridView.count(
-              crossAxisSpacing: 50,
-              mainAxisSpacing: 50,
+              crossAxisSpacing: 25,
+              mainAxisSpacing: 25,
               shrinkWrap: true,
-              crossAxisCount: Responsive.isDesktop(context) ? 3 : 1,
+              crossAxisCount: Responsive.isDesktop(context)
+                  ? 3
+                  : Responsive.isTablet(context)
+                      ? 3
+                      : Responsive.isMobile(context)
+                          ? 1
+                          : 1,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                SkillTile(
-                  title: 'Programming Languages',
-                  subtitle: 'What I use for my projects',
-                  skillList: programmingList,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SkillDecoration(dotColor: AppColors.darkGreenColor),
+                    SkillTile(
+                      title: 'Programming Languages',
+                      subtitle: 'to develop',
+                      skillList: programmingList,
+                    ),
+                  ],
                 ),
-                SkillTile(
-                  title: 'Software',
-                  subtitle: 'What I use for my projects',
-                  skillList: softwareList,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SkillDecoration(dotColor: AppColors.yellowColor),
+                    SkillTile(
+                      title: 'Software',
+                      subtitle: 'to create',
+                      skillList: softwareList,
+                    ),
+                  ],
                 ),
-                SkillTile(
-                  title: 'Languages',
-                  subtitle: 'What I use for my projects',
-                  skillList: languagesList,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SkillDecoration(dotColor: AppColors.orangeColor),
+                    SkillTile(
+                      title: 'Languages',
+                      subtitle: 'to communicate',
+                      skillList: languagesList,
+                    ),
+                  ],
                 ),
               ],
             ),

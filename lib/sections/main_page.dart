@@ -6,7 +6,6 @@ import 'package:portfolio/sections/hero_section/hero_section.dart';
 import 'package:portfolio/sections/nav_section/nav_bar.dart';
 import 'package:portfolio/sections/projects_section/projects_section.dart';
 import 'package:portfolio/sections/skills_section/skills_section.dart';
-import 'package:portfolio/sections/widgets/score_panel.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});

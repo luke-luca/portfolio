@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
+import 'package:portfolio/responsive.dart';
 
 class CounterTile extends StatelessWidget {
   const CounterTile({
@@ -19,7 +20,9 @@ class CounterTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-      width: 300,
+      width: (Responsive.isMobile(context))
+          ? MediaQuery.of(context).size.width
+          : 300,
       height: 92,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),

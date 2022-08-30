@@ -18,6 +18,11 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     return Container(
       width: double.infinity,
       color: Colors.white,
+      padding: (width < AppConstsMobile.isMobile)
+          ? AppConstsMobile.defaultPadding
+          : (width < AppConstsTablet.isTablet)
+              ? AppConstsTablet.defaultPadding
+              : AppConstsDesktop.defaultPadding,
       child: Center(
         child: SizedBox(
           width: 1150,
@@ -25,31 +30,26 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: (width < AppConstsMobile.isMobile)
-                    ? AppConstsMobile.defaultPadding
-                    : (width < AppConstsTablet.isTablet)
-                        ? AppConstsTablet.defaultPadding
-                        : AppConstsDesktop.defaultPadding,
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Latest Projects',
-                        style: AppTextStyles.h2,
-                      ),
-                      Text(
-                        'I love creating things and always do my best to make them look great',
-                        textAlign: TextAlign.justify,
-                        style: AppTextStyles.pDark,
-                      ),
-                    ]),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Latest Projects',
+                    style: AppTextStyles.h2,
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Bringing new ideas to real projects is a pleasure for me, and I treat every project with excessive precision.',
+                    textAlign: TextAlign.justify,
+                    style: AppTextStyles.pDark,
+                  ),
+                ],
               ),
-              const SizedBox(height: 20),
-              if (Responsive.isMobile(context)) Carousel(),
-              if (Responsive.isTablet(context)) Grid(),
-              if (Responsive.isDesktop(context)) Grid(),
+              const SizedBox(height: 30),
+              if (Responsive.isMobile(context)) const Carousel(),
+              if (Responsive.isTablet(context)) const Grid(),
+              if (Responsive.isDesktop(context)) const Grid(),
             ],
           ),
         ),

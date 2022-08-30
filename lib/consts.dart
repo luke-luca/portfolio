@@ -23,7 +23,7 @@ class AppTextStyles {
   /// Text Styles
   static TextStyle h1 = AppFonts.nunitoFont.copyWith(
     fontSize: 64,
-    fontWeight: FontWeight.w800,
+    fontWeight: FontWeight.bold,
     color: AppColors.darkGreenColor,
   );
 
@@ -86,7 +86,7 @@ class AppConstsDesktop {
   /// Desktop
   static const double isDesktop = 1024;
   static EdgeInsets defaultPadding =
-      const EdgeInsets.symmetric(vertical: 64, horizontal: 48);
+      const EdgeInsets.symmetric(vertical: 64, horizontal: 32);
   static EdgeInsets defaultPaddingNavBar =
       const EdgeInsets.symmetric(vertical: 32, horizontal: 16);
 }
@@ -95,7 +95,7 @@ class AppConstsTablet {
   /// Tablet
   static const double isTablet = 768;
   static EdgeInsets defaultPadding =
-      const EdgeInsets.symmetric(vertical: 48, horizontal: 32);
+      const EdgeInsets.symmetric(vertical: 48, horizontal: 16);
   static EdgeInsets defaultPaddingNavBar =
       const EdgeInsets.symmetric(vertical: 32, horizontal: 16);
 }
@@ -104,7 +104,7 @@ class AppConstsMobile {
   /// Mobile
   static const double isMobile = 480;
   static EdgeInsets defaultPadding =
-      const EdgeInsets.symmetric(vertical: 32, horizontal: 16);
+      const EdgeInsets.symmetric(vertical: 32, horizontal: 8);
   static EdgeInsets defaultPaddingNavBar =
-      const EdgeInsets.symmetric(vertical: 32, horizontal: 16);
+      const EdgeInsets.symmetric(vertical: 32, horizontal: 8);
 }

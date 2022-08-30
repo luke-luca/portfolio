@@ -3,7 +3,6 @@ import 'package:portfolio/consts.dart';
 import 'package:portfolio/responsive.dart';
 import 'package:portfolio/sections/hero_section/widgets/hero_description.dart';
 import 'package:portfolio/sections/hero_section/widgets/hero_photo.dart';
-import 'package:portfolio/sections/widgets/score_panel.dart';
 
 class HeroSection extends StatefulWidget {
   const HeroSection({super.key});
