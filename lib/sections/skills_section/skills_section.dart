@@ -76,7 +76,7 @@ class _SkillsSectionState extends State<SkillsSection> {
       child: SizedBox(
         width: 1150,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               'Technology Stack',
@@ -89,18 +89,11 @@ class _SkillsSectionState extends State<SkillsSection> {
               style: AppTextStyles.pDark,
             ),
             const SizedBox(height: 30),
-            GridView.count(
-              crossAxisSpacing: 25,
-              mainAxisSpacing: 25,
-              shrinkWrap: true,
-              crossAxisCount: Responsive.isDesktop(context)
-                  ? 3
-                  : Responsive.isTablet(context)
-                      ? 3
-                      : Responsive.isMobile(context)
-                          ? 1
-                          : 1,
-              physics: const NeverScrollableScrollPhysics(),
+            Wrap(
+              alignment: getWrapAlignment(context),
+              direction: Responsive.isDesktop(context)
+                  ? Axis.horizontal
+                  : Axis.vertical,
               children: [
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +120,6 @@ class _SkillsSectionState extends State<SkillsSection> {
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -145,5 +137,13 @@ class _SkillsSectionState extends State<SkillsSection> {
         ),
       ),
     );
+  }
+
+  WrapAlignment getWrapAlignment(BuildContext context) {
+    if (Responsive.isDesktop(context)) {
+      return WrapAlignment.spaceBetween;
+    } else {
+      return WrapAlignment.center;
+    }
   }
 }

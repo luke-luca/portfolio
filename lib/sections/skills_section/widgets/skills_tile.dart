@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/consts.dart';
+import 'package:portfolio/responsive.dart';
 import 'package:portfolio/sections/skills_section/models/skill_model.dart';
+import 'package:portfolio/sections/widgets/custom_vertical_divider.dart';
 
 class SkillTile extends StatelessWidget {
   const SkillTile({
@@ -17,7 +19,7 @@ class SkillTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 275,
+      width: 250,
       height: 350,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),

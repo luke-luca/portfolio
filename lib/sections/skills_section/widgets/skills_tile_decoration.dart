@@ -16,6 +16,7 @@ class _SkillDecorationState extends State<SkillDecoration> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           DashedCircle(
             color: AppColors.darkGreenColor,

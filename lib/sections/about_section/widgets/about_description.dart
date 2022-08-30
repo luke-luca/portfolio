@@ -17,14 +17,14 @@ class AboutDescription extends StatelessWidget {
         const SizedBox(height: 10),
         Column(
           children: [
-            Text(
-              'I am a freelancer and aspiring web developer who is passionate about building user-friendly websites and apps. My interests lie mainly within the area of web development, but also include other areas such as design or graphics. I want my UI projects to be minimalistic, aesthetic and accessible for everyone. UI is my second passion, right after programming. I am hard working and always curious about new technologies and innovations.',
+            SelectableText(
+              'I am a freelancer and aspiring mobile and web developer who is passionate about building user-friendly websites and apps. My interests lie mainly within the area of mobile and web development, but also include other areas such as design or graphics. I want my UI projects to be minimalistic, aesthetic and accessible for everyone. UI is my second passion, right after programming. I am hard working and always curious about new technologies and innovations.',
               textAlign: TextAlign.justify,
               style: AppTextStyles.pDark,
             ),
             const SizedBox(height: 10),
-            Text(
-              'Currently, I am focusing on creating mobile applications and websites. I have experience working with clients from Poland and abroad. Communication in the team is the key to success for me.',
+            SelectableText(
+              'Currently, I am focusing on creating mobile applications and websites. I have experience working with clients from Poland and abroad. Communication in the team is the key to success for me. My goal is to continue developing my skills and create applications that are useful for people and businesses.',
               textAlign: TextAlign.justify,
               style: AppTextStyles.pDark,
             ),
