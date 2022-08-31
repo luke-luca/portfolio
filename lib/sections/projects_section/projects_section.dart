@@ -85,7 +85,7 @@ class Grid extends StatelessWidget {
       mainAxisSpacing: 50,
       crossAxisSpacing: 50,
       shrinkWrap: true,
-      crossAxisCount: 3,
+      crossAxisCount: Responsive.isDesktop(context) ? 3 : 2,
       physics: const NeverScrollableScrollPhysics(),
       children: projectsItems,
     );

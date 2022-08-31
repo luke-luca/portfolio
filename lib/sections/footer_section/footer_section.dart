@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
@@ -30,7 +32,6 @@ class FooterSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   FooterInfo(),
-                  DecotarionFooter(),
                 ],
               ),
               const CustomDivider(),
@@ -58,11 +59,16 @@ class FooterSection extends StatelessWidget {
   }
 }
 
-class FooterInfo extends StatelessWidget {
+class FooterInfo extends StatefulWidget {
   const FooterInfo({
     super.key,
   });
 
+  @override
+  State<FooterInfo> createState() => _FooterInfoState();
+}
+
+class _FooterInfoState extends State<FooterInfo> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -84,35 +90,21 @@ class FooterInfo extends StatelessWidget {
             const SizedBox(height: 10),
             RichText(
               text: TextSpan(
-                text: 'Checkout my ',
-                style: AppTextStyles.h3,
-                children: [
-                  TextSpan(
-                    text: 'resume',
-                    style: AppTextStyles.h3.copyWith(
-                      color: AppColors.orangeColor,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            RichText(
-              text: TextSpan(
-                text: 'E-mail me at ',
-                style: AppTextStyles.h3,
+                text: 'E-mail me at\n',
+                style: AppTextStyles.h2,
                 children: [
                   TextSpan(
                     text: 'kontakt@lukaszmazurkiewicz.pl',
-                    style: AppTextStyles.h3.copyWith(
+                    style: AppTextStyles.h2.copyWith(
                       color: AppColors.orangeColor,
                       decoration: TextDecoration.underline,
+                      fontSize: 22,
                     ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         final emailLaunchUri = Uri(
                           scheme: 'mailto',
-                          path: 'smith@example.com',
+                          path: 'kontakt@lukaszmazurkiewicz.pl',
                         );
                         launchUrl(emailLaunchUri);
                       },
@@ -122,6 +114,7 @@ class FooterInfo extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 10),
         Row(
           children: [
             IconButton(
@@ -157,10 +150,10 @@ class DecotarionFooter extends StatelessWidget {
     return Container(
       width: (!Responsive.isDesktop(context))
           ? MediaQuery.of(context).size.width * 0.2
-          : 300,
+          : 400,
       height: (!Responsive.isDesktop(context))
           ? MediaQuery.of(context).size.height * 0.2
-          : 300,
+          : 400,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage('/images/background_photo-footer.png'),
@@ -182,7 +175,7 @@ class CopyRights extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '©2022 lukaszmazurkiewicz.pl All Rights Reserved',
+            '©2022 lukaszmazurkiewicz.pl \nAll Rights Reserved',
             style: AppTextStyles.pLight,
             textAlign: TextAlign.center,
           ),

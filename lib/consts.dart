@@ -52,7 +52,7 @@ class AppTextStyles {
   );
 
   static TextStyle pAccent = AppFonts.robotoSlabFont.copyWith(
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.normal,
     color: AppColors.orangeColor,
   );
@@ -80,6 +80,16 @@ class AppConsts {
   static const String appAuthorGithub = 'https://github.com/luke-luca';
   static const String appAuthorLinkedIn =
       'https://www.linkedin.com/in/lukaszzmazurkiewicz/';
+}
+
+class AppConstsLinksProject {
+  static const String alemajster = 'https://alemajster.pl/';
+  static const String surgipet = 'https://surgipet.com/';
+  static const String dailyTasks = 'https://github.com/luke-luca/daily_tasks';
+  static const String portfolio = 'https://github.com/luke-luca/portfolio';
+  static const String riskolobrzeg = 'https://riskolobrzeg.pl/';
+  static const String currencyExchange =
+      'https://lukaszmazurkiewicz.pl/currency_exchange/#/';
 }
 
 class AppConstsDesktop {

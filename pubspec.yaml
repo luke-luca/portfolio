@@ -8,6 +8,7 @@ environment:
   flutter: 3.0.5
 
 dependencies:
+  blobs: ^2.0.0
   bloc: ^8.1.0
   carousel_slider: ^4.1.1
   dashed_circle: ^0.0.2
@@ -17,10 +18,11 @@ dependencies:
   flutter_dash: ^1.0.0
   flutter_localizations:
     sdk: flutter
-  flutter_native_splash: ^2.2.8
   flutter_svg: ^1.1.4
   google_fonts: ^3.0.1
+  hovering: ^1.0.4
   intl: ^0.17.0
+  open_filex: ^3.4.0
   url_launcher: ^6.1.5
 
 dev_dependencies:

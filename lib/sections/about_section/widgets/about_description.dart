@@ -17,10 +17,51 @@ class AboutDescription extends StatelessWidget {
         const SizedBox(height: 10),
         Column(
           children: [
-            SelectableText(
-              'I am a freelancer and aspiring mobile and web developer who is passionate about building user-friendly websites and apps. My interests lie mainly within the area of mobile and web development, but also include other areas such as design or graphics. I want my UI projects to be minimalistic, aesthetic and accessible for everyone. UI is my second passion, right after programming. I am hard working and always curious about new technologies and innovations.',
+            RichText(
               textAlign: TextAlign.justify,
-              style: AppTextStyles.pDark,
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text:
+                        'I am a freelancer and aspiring mobile and web developer who is passionate about building',
+                    style: AppTextStyles.pDark,
+                  ),
+                  TextSpan(
+                    text: ' user-friendly websites and apps',
+                    style: AppTextStyles.pAccent,
+                  ),
+                  TextSpan(
+                    text:
+                        '. My interests lie mainly within the area of mobile and web development, but also include other areas such as',
+                    style: AppTextStyles.pDark,
+                  ),
+                  TextSpan(
+                    text: ' design or graphics',
+                    style: AppTextStyles.pAccent,
+                  ),
+                  TextSpan(
+                    text: '. I want my UI projects to be ',
+                    style: AppTextStyles.pDark,
+                  ),
+                  TextSpan(
+                    text: 'minimalistic, aesthetic and accessible',
+                    style: AppTextStyles.pAccent,
+                  ),
+                  TextSpan(
+                    text:
+                        'for everyone. UI/UX is my second passion, right after programming. I am ',
+                    style: AppTextStyles.pDark,
+                  ),
+                  TextSpan(
+                    text: 'hard working and always curious ',
+                    style: AppTextStyles.pAccent,
+                  ),
+                  TextSpan(
+                    text: 'about new technologies and innovations.',
+                    style: AppTextStyles.pDark,
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 10),
             SelectableText(

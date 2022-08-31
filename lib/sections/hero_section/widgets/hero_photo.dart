@@ -8,7 +8,7 @@ class HeroPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Responsive(
       mobile: SizedBox(
-        height: 400,
+        height: 320,
         child: DecoratedBox(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -27,7 +27,7 @@ class HeroPhoto extends StatelessWidget {
         ),
       ),
       tablet: SizedBox(
-        height: 400,
+        height: 500,
         child: DecoratedBox(
           decoration: const BoxDecoration(
             image: DecorationImage(

@@ -7,7 +7,9 @@ class ScorePanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    return Container(
+      height: 250,
+      width: 1150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
@@ -26,7 +28,7 @@ class ScorePanel extends StatelessWidget {
             title: 'Websites ',
             subtitle: '6 Done Websites',
             iconTile: Icons.desktop_mac,
-            color: AppColors.darkGreenColor,
+            color: AppColors.greenColor,
           ),
           CounterTile(
             title: 'Mobile Apps',

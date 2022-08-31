@@ -14,7 +14,7 @@ class AboutElements extends StatelessWidget {
           title: 'Websites ',
           subtitle: '6 Projects',
           iconTile: Icons.desktop_mac,
-          color: AppColors.darkGreenColor,
+          color: AppColors.greenColor,
         ),
         SizedBox(height: 20),
         CounterTile(
