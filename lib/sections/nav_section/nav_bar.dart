@@ -51,7 +51,7 @@ class _NavBarState extends State<NavBar> {
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: Image.asset('logo/logo.png'),
+                          icon: Image.asset('assets/logo/logo.png'),
                           iconSize: 36,
                           hoverColor: Colors.transparent,
                           splashColor: Colors.transparent,
@@ -89,7 +89,7 @@ class _NavBarState extends State<NavBar> {
                           hoverColor: Colors.transparent,
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
-                          icon: Image.asset('logo/logo.png'),
+                          icon: Image.asset('assets/logo/logo.png'),
                           iconSize: 36,
                         ),
                         Row(
@@ -106,7 +106,7 @@ class _NavBarState extends State<NavBar> {
                               hoverColor: Colors.transparent,
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              icon: Image.asset('icons/github_icon.png'),
+                              icon: Image.asset('assets/icons/github_icon.png'),
                               iconSize: 36,
                             ),
                             IconButton(
@@ -118,7 +118,8 @@ class _NavBarState extends State<NavBar> {
                               hoverColor: Colors.transparent,
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              icon: Image.asset('icons/linkedin_icon.png'),
+                              icon:
+                                  Image.asset('assets/icons/linkedin_icon.png'),
                               iconSize: 36,
                             ),
                           ],

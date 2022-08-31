@@ -26,19 +26,19 @@ class ScorePanel extends StatelessWidget {
         children: const [
           CounterTile(
             title: 'Websites ',
-            subtitle: '6 Done Websites',
+            subtitle: '6 Websites',
             iconTile: Icons.desktop_mac,
             color: AppColors.greenColor,
           ),
           CounterTile(
             title: 'Mobile Apps',
-            subtitle: '1 Done Mobile App',
+            subtitle: '1 Mobile App',
             iconTile: Icons.phone_android,
             color: AppColors.yellowColor,
           ),
           CounterTile(
             title: 'Commercial Projects',
-            subtitle: '4 Done Projects',
+            subtitle: '4 Projects',
             iconTile: Icons.business,
             color: AppColors.orangeColor,
           ),

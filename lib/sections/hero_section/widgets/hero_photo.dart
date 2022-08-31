@@ -12,7 +12,7 @@ class HeroPhoto extends StatelessWidget {
         child: DecoratedBox(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('/images/background_photo.png'),
+              image: AssetImage('assets/images/background_photo.png'),
               fit: BoxFit.contain,
               alignment: Alignment.bottomCenter,
             ),
@@ -20,7 +20,7 @@ class HeroPhoto extends StatelessWidget {
           child: Align(
             alignment: Alignment.bottomCenter,
             child: Image.asset(
-              'images/me.png',
+              'assets/images/me.png',
               fit: BoxFit.contain,
             ),
           ),
@@ -31,7 +31,7 @@ class HeroPhoto extends StatelessWidget {
         child: DecoratedBox(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('/images/background_photo.png'),
+              image: AssetImage('assets/images/background_photo.png'),
               fit: BoxFit.contain,
               alignment: Alignment.centerRight,
             ),
@@ -39,7 +39,7 @@ class HeroPhoto extends StatelessWidget {
           child: Align(
             alignment: Alignment.bottomRight,
             child: Image.asset(
-              'images/me.png',
+              'assets/images/me.png',
               fit: BoxFit.contain,
             ),
           ),
@@ -50,7 +50,7 @@ class HeroPhoto extends StatelessWidget {
         child: DecoratedBox(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('/images/background_photo.png'),
+              image: AssetImage('assets/images/background_photo.png'),
               fit: BoxFit.contain,
               alignment: Alignment.centerRight,
             ),
@@ -58,7 +58,7 @@ class HeroPhoto extends StatelessWidget {
           child: Align(
             alignment: Alignment.bottomRight,
             child: Image.asset(
-              'images/me.png',
+              'assets/images/me.png',
               fit: BoxFit.contain,
             ),
           ),

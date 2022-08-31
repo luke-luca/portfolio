@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/consts.dart';
-import 'package:portfolio/responsive.dart';
 import 'package:portfolio/sections/skills_section/models/skill_model.dart';
-import 'package:portfolio/sections/widgets/custom_vertical_divider.dart';
 
 class SkillTile extends StatelessWidget {
   const SkillTile({
@@ -44,7 +42,7 @@ class SkillTile extends StatelessWidget {
                     style: AppTextStyles.h3,
                   ),
                   leading: SvgPicture.asset(
-                    '/skills_icons/${skillList[index].icon}-plain.svg',
+                    'assets/skills_icons/${skillList[index].icon}-plain.svg',
                     width: 16,
                     height: 16,
                     color: AppColors.darkGreenColor,

@@ -16,50 +16,47 @@ class _HeroSectionState extends State<HeroSection> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-    return Container(
-      child: Padding(
-        padding: (width < AppConstsMobile.isMobile)
-            ? AppConstsMobile.defaultPadding
-            : (width < AppConstsTablet.isTablet)
-                ? AppConstsTablet.defaultPadding
-                : AppConstsDesktop.defaultPadding,
-        child: Responsive(
-          mobile: Expanded(
-            child: Column(
-              children: const [
-                HeroDescription(),
-                HeroPhoto(),
-              ],
-            ),
+    return Padding(
+      padding: (width < AppConstsMobile.isMobile)
+          ? AppConstsMobile.defaultPadding
+          : (width < AppConstsTablet.isTablet)
+              ? AppConstsTablet.defaultPadding
+              : AppConstsDesktop.defaultPadding,
+      child: Responsive(
+        mobile: Expanded(
+          child: Column(
+            children: const [
+              HeroDescription(),
+              HeroPhoto(),
+            ],
           ),
-          tablet: Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: const [
-                    Expanded(flex: 2, child: HeroDescription()),
-                    Expanded(flex: 3, child: HeroPhoto()),
-                  ],
-                ),
-              ],
-            ),
+        ),
+        tablet: Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: const [
+                  Expanded(flex: 2, child: HeroDescription()),
+                  Expanded(flex: 3, child: HeroPhoto()),
+                ],
+              ),
+            ],
           ),
-          desktop: Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: const [
-                    Expanded(flex: 2, child: HeroDescription()),
-                    Expanded(flex: 3, child: HeroPhoto()),
-                  ],
-                ),
-              ],
-            ),
+        ),
+        desktop: Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: const [
+                  Expanded(flex: 2, child: HeroDescription()),
+                  Expanded(flex: 3, child: HeroPhoto()),
+                ],
+              ),
+            ],
           ),
         ),
       ),

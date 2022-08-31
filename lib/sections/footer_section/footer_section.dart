@@ -123,7 +123,7 @@ class _FooterInfoState extends State<FooterInfo> {
                 launchUrl(_url);
               },
               hoverColor: Colors.transparent,
-              icon: Image.asset('icons/github_icon.png'),
+              icon: Image.asset('assets/icons/github_icon.png'),
               iconSize: 36,
             ),
             IconButton(
@@ -132,7 +132,7 @@ class _FooterInfoState extends State<FooterInfo> {
                 launchUrl(_url);
               },
               hoverColor: Colors.transparent,
-              icon: Image.asset('icons/linkedin_icon.png'),
+              icon: Image.asset('assets/icons/linkedin_icon.png'),
               iconSize: 36,
             ),
           ],
@@ -156,7 +156,7 @@ class DecotarionFooter extends StatelessWidget {
           : 400,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('/images/background_photo-footer.png'),
+          image: AssetImage('assets/images/background_photo-footer.png'),
           fit: BoxFit.contain,
           alignment: Alignment.bottomRight,
         ),

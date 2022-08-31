@@ -1,11 +1,9 @@
-import 'dart:html';
-
+import 'package:blobs/blobs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hovering/hovering.dart';
 import 'package:portfolio/consts.dart';
 import 'package:portfolio/responsive.dart';
-import 'package:blobs/blobs.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectTile extends StatelessWidget {
@@ -73,7 +71,7 @@ class ProjectTile extends StatelessWidget {
               child: Transform(
                 transform: Matrix4.rotationZ(-0.1),
                 child: Image.asset(
-                  '/projects_photos/$image.png',
+                  'assets/projects_photos/$image.png',
                   width: (Responsive.isMobile(context))
                       ? 200
                       : (Responsive.isTablet(context))
@@ -114,7 +112,7 @@ class ProjectTile extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(right: 8),
                           child: SvgPicture.asset(
-                            '/skills_icons/${techList[i]}-plain.svg',
+                            'assets/skills_icons/${techList[i]}-plain.svg',
                             width: 30,
                             height: 30,
                             color: Colors.white,
