@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/consts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
@@ -9,7 +10,10 @@ class MainButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        final _url = Uri.parse(AppConsts.appAuthorLinkedIn);
+        launchUrl(_url);
+      },
       style: ElevatedButton.styleFrom(
         primary: AppColors.yellowColor,
         elevation: 0,

@@ -34,7 +34,7 @@ class _SkillDecorationState extends State<SkillDecoration> {
           ),
           const Dash(
             direction: Axis.vertical,
-            length: 240,
+            length: 260,
             dashLength: 8,
             dashColor: AppColors.darkGreenColor,
             dashThickness: 2,

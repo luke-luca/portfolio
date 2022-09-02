@@ -13,46 +13,26 @@ class FooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: (width < AppConstsMobile.isMobile)
-          ? AppConstsMobile.defaultPadding
-          : (width < AppConstsTablet.isTablet)
-              ? AppConstsTablet.defaultPadding
-              : AppConstsDesktop.defaultPadding,
-      child: Responsive(
-        mobile: Expanded(
-          child: Column(
-            children: const [FooterInfo(), CustomDivider(), CopyRights()],
-          ),
-        ),
-        tablet: Expanded(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  FooterInfo(),
-                ],
-              ),
-              const CustomDivider(),
-              const CopyRights(),
-            ],
-          ),
-        ),
-        desktop: Expanded(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  FooterInfo(),
-                  DecotarionFooter(),
-                ],
-              ),
-              const CustomDivider(),
-              const CopyRights(),
-            ],
-          ),
+    return SizedBox(
+      width: 1150,
+      child: Padding(
+        padding: (width < AppConstsMobile.isMobile)
+            ? AppConstsMobile.defaultPadding
+            : (width < AppConstsTablet.isTablet)
+                ? AppConstsTablet.defaultPadding
+                : AppConstsDesktop.defaultPadding,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const FooterInfo(),
+                if (!Responsive.isMobile(context)) const DecotarionFooter(),
+              ],
+            ),
+            const CustomDivider(),
+            const CopyRights(),
+          ],
         ),
       ),
     );
@@ -79,7 +59,7 @@ class _FooterInfoState extends State<FooterInfo> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Let’s talk and work together!',
+              'Let’s talk\n and work together!',
               style: AppTextStyles.h2,
             ),
             const SizedBox(height: 10),

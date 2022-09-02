@@ -44,7 +44,7 @@ class AboutDescription extends StatelessWidget {
                     style: AppTextStyles.pDark,
                   ),
                   TextSpan(
-                    text: 'minimalistic, aesthetic and accessible',
+                    text: 'minimalistic, aesthetic and accessible ',
                     style: AppTextStyles.pAccent,
                   ),
                   TextSpan(

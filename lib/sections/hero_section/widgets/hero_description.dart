@@ -28,9 +28,10 @@ class HeroDescription extends StatelessWidget {
           child: Text(
             'kontakt@lukaszmazurkiewicz.pl',
             style: AppTextStyles.h2.copyWith(
-                color: AppColors.orangeColor,
-                fontSize: 20,
-                decoration: TextDecoration.underline),
+              color: AppColors.orangeColor,
+              fontSize: 20,
+              decoration: TextDecoration.underline,
+            ),
           ),
         ),
       ],

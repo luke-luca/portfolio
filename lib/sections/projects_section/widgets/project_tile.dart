@@ -66,12 +66,13 @@ class ProjectTile extends StatelessWidget {
               ),
             ),
             Positioned(
-              right: 40,
-              bottom: 10,
+              right: 35,
+              bottom: 5,
               child: Transform(
                 transform: Matrix4.rotationZ(-0.1),
                 child: Image.asset(
                   'assets/projects_photos/$image.png',
+                  filterQuality: FilterQuality.high,
                   width: (Responsive.isMobile(context))
                       ? 200
                       : (Responsive.isTablet(context))

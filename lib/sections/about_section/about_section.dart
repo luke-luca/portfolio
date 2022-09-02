@@ -26,36 +26,30 @@ class AboutSection extends StatelessWidget {
           child: SizedBox(
             width: 1150,
             child: Responsive(
-              mobile: Expanded(
-                child: Column(
+              mobile: Column(
+                children: const [
+                  AboutElements(),
+                  CustomDivider(),
+                  AboutDescription(),
+                ],
+              ),
+              tablet: IntrinsicHeight(
+                child: Row(
                   children: const [
                     AboutElements(),
-                    CustomDivider(),
-                    AboutDescription(),
+                    CustomVerticalDivider(),
+                    Expanded(child: AboutDescription()),
                   ],
                 ),
               ),
-              tablet: Expanded(
-                child: IntrinsicHeight(
-                  child: Row(
-                    children: const [
-                      AboutElements(),
-                      CustomVerticalDivider(),
-                      Expanded(child: AboutDescription()),
-                    ],
-                  ),
-                ),
-              ),
-              desktop: Expanded(
-                child: IntrinsicHeight(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      AboutElements(),
-                      CustomVerticalDivider(),
-                      Expanded(child: AboutDescription()),
-                    ],
-                  ),
+              desktop: IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    AboutElements(),
+                    CustomVerticalDivider(),
+                    Expanded(child: AboutDescription()),
+                  ],
                 ),
               ),
             ),

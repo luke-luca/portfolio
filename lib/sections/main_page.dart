@@ -15,18 +15,12 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  late ScrollController _controller;
-  double pixels = 0;
+  //how to scroll to each section on click describe to me
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-    _controller = ScrollController();
-    _controller.addListener(() {
-      setState(() {
-        pixels = _controller.position.pixels;
-      });
-    });
   }
 
   @override

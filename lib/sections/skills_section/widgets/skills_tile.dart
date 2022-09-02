@@ -33,6 +33,7 @@ class SkillTile extends StatelessWidget {
               style: AppTextStyles.pLight,
             ),
             ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: skillList.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {

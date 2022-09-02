@@ -138,17 +138,13 @@ class _SkillsSectionState extends State<SkillsSection> {
               ],
             ),
             const SizedBox(height: 30),
-            //CREATE WIDGET WITH plight with text As nowadays my main language is dart and framework flutter, I know also packages like Dio, Syncfusion, Firebase, Firebase Auth, and more more things what i want to learn and use in my projects.
-            //make responsive
-            //packages get into TextSpan with bold font
-            //make text selectable
             RichText(
               textAlign: TextAlign.justify,
               text: TextSpan(
                 style: AppTextStyles.pDark,
                 children: [
                   const TextSpan(
-                    text: 'As nowadays my main  programminglanguage is ',
+                    text: 'Nowadays, my main programming language is ',
                   ),
                   TextSpan(
                     text: 'dart',
@@ -162,16 +158,24 @@ class _SkillsSectionState extends State<SkillsSection> {
                     style: AppTextStyles.h3,
                   ),
                   TextSpan(
-                    text: ', I know also packages like',
+                    text: ', I also have experience in packages like',
                     style: AppTextStyles.pDark,
                   ),
                   TextSpan(
-                    text: ' Dio, Syncfusion, Firebase, Firebase Auth,',
+                    text: ' Dio, Syncfusion, Firebase, Firebase Auth, SQLite.',
+                    style: AppTextStyles.h3,
+                  ),
+                  TextSpan(
+                    text: 'I seamlessly use ',
+                    style: AppTextStyles.pDark,
+                  ),
+                  TextSpan(
+                    text: 'REST API and JSON',
                     style: AppTextStyles.h3,
                   ),
                   TextSpan(
                     text:
-                        ' and more more things what I want to learn and use in my projects.',
+                        '  files. I am open to learning and using new things in my projects.',
                     style: AppTextStyles.pDark,
                   ),
                 ],
