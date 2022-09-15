@@ -59,7 +59,7 @@ class _FooterInfoState extends State<FooterInfo> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Let’s talk\n and work together!',
+              'Let’s talk \nand work together!',
               style: AppTextStyles.h2,
             ),
             const SizedBox(height: 10),
